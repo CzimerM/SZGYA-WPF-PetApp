@@ -17,7 +17,12 @@ namespace SZGYA_WPF_PetApp
         public int Age { get; set; }
         public string Color { get; set; }
 
-        public Visibility extendedDataVisibility;
+        public Visibility extendedDataVisibility
+        {
+            get { return showExtendedData ? Visibility.Visible : Visibility.Collapsed; }
+        }
+
+        public bool showExtendedData { get; set; } = false;
         public string ImgPath 
         { 
             get
@@ -37,6 +42,7 @@ namespace SZGYA_WPF_PetApp
             Age = int.Parse(data[1]);
             Color = data[2];
             ImgPath = data[3];
+            showExtendedData = false;
         }
     }
 }

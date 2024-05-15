@@ -31,9 +31,11 @@
                             </Style>
                         </StackPanel.Resources>
                         <Label Content="{Binding Name}"/>
-                        <TextBlock Text="{Binding Age, StringFormat={}kor: {0}}"/>
-                        <TextBlock Text="{Binding Color, StringFormat={}szín: {0}}"/>
-                        <Image Width="200" Source="{Binding ImgPath}"/>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Visibility="{Binding extendedDataVisibility}">
+                            <TextBlock Text="{Binding Age, StringFormat={}kor: {0}}"/>
+                            <TextBlock Text="{Binding Color, StringFormat={}szín: {0}}"/>
+                            <Image Width="200" Source="{Binding ImgPath}"/>
+                        </StackPanel>
                         <Button MaxHeight="40px" Margin="10,10" Click="btnCopyClick" Content="Másolás"/>
                     </StackPanel>
                 </DataTemplate>

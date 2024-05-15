@@ -32,6 +32,7 @@ namespace SZGYA_WPF_PetApp
 
             lstbxAnimal.ItemsSource = animals;
             lstbxPets.ItemsSource = pets;
+            lstbxAnimal.SelectedIndex = 0;
         }
 
         void btnCopyClick(object sender, RoutedEventArgs e)
@@ -54,8 +55,8 @@ namespace SZGYA_WPF_PetApp
 
         private void lstbxAnimalSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            foreach (Animal c in animals) c.extendedDataVisibility = Visibility.Collapsed;
-            if (lstbxAnimal.SelectedItem != null) ((Animal)lstbxAnimal.SelectedItem).extendedDataVisibility = Visibility.Visible;
+            foreach (Animal c in animals) c.showExtendedData = false;
+            if (lstbxAnimal.SelectedItem != null) ((Animal)lstbxAnimal.SelectedItem).showExtendedData = true;
             lstbxAnimal.Items.Refresh();
         }
     }
