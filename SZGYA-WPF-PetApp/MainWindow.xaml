@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SZGYA_WPF_PetApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="1000">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
@@ -17,14 +17,24 @@
         </Grid.RowDefinitions>
         <Label Content="Állatok" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
         <Label Content="Kedvencek" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
-        <ListBox x:Name="lstbxAnimal" Grid.Column="0" Grid.Row="1">
+        <ListBox x:Name="lstbxAnimal" Grid.Column="0" Grid.Row="1" SelectionChanged="lstbxAnimalSelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
+                        <StackPanel.Resources>
+                            <Style TargetType="Label">
+                                <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                            </Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                                <Setter Property="Margin" Value="10,10"></Setter>
+                            </Style>
+                        </StackPanel.Resources>
                         <Label Content="{Binding Name}"/>
-                        <Label Content="{Binding Age}"/>
-                        <Label Content="{Binding Color}"/>
-                        <Button Click="btnCopyClick" Content="Másolás"/>
+                        <TextBlock Text="{Binding Age, StringFormat={}kor: {0}}"/>
+                        <TextBlock Text="{Binding Color, StringFormat={}szín: {0}}"/>
+                        <Image Width="200" Source="{Binding ImgPath}"/>
+                        <Button MaxHeight="40px" Margin="10,10" Click="btnCopyClick" Content="Másolás"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -34,10 +44,19 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
+                        <StackPanel.Resources>
+                            <Style TargetType="Label">
+                                <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                            </Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                                <Setter Property="Margin" Value="10,10"></Setter>
+                            </Style>
+                        </StackPanel.Resources>
                         <Label Content="{Binding Name}"/>
-                        <Label Content="{Binding Age}"/>
-                        <Label Content="{Binding Color}"/>
-                        <Button Click="btnDeleteClick" Content="Törlés"/>
+                        <TextBlock Text="{Binding Age, StringFormat={}kor: {0}}"/>
+                        <TextBlock Text="{Binding Color, StringFormat={}szín: {0}}"/>
+                        <Button MaxHeight="40px" Margin="10,10" Click="btnDeleteClick" Content="Törlés"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

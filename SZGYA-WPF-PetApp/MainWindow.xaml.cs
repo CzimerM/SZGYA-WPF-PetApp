@@ -51,5 +51,12 @@ namespace SZGYA_WPF_PetApp
             }
             lstbxPets.Items.Refresh();
         }
+
+        private void lstbxAnimalSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            foreach (Animal c in animals) c.extendedDataVisibility = Visibility.Collapsed;
+            if (lstbxAnimal.SelectedItem != null) ((Animal)lstbxAnimal.SelectedItem).extendedDataVisibility = Visibility.Visible;
+            lstbxAnimal.Items.Refresh();
+        }
     }
 }
