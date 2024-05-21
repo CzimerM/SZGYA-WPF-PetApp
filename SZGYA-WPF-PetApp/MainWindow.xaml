@@ -20,24 +20,31 @@
         <ListBox x:Name="lstbxAnimal" Grid.Column="0" Grid.Row="1" SelectionChanged="lstbxAnimalSelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <StackPanel.Resources>
+                    <Grid>
+                        <Grid.Resources>
                             <Style TargetType="Label">
                                 <Setter Property="VerticalAlignment" Value="Center"></Setter>
                             </Style>
                             <Style TargetType="TextBlock">
                                 <Setter Property="VerticalAlignment" Value="Center"></Setter>
-                                <Setter Property="Margin" Value="10,10"></Setter>
+                                <Setter Property="Margin" Value="5,10"></Setter>
                             </Style>
-                        </StackPanel.Resources>
-                        <Label Content="{Binding Name}"/>
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Visibility="{Binding extendedDataVisibility}">
-                            <TextBlock Text="{Binding Age, StringFormat={}kor: {0}}"/>
-                            <TextBlock Text="{Binding Color, StringFormat={}szín: {0}}"/>
-                            <Image Width="200" Source="{Binding ImgPath}"/>
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="{Binding Name}" Grid.Column="0" Width="80px"/>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Width="130px" Grid.Column="1">
+                            <TextBlock Text="{Binding Age, StringFormat={}kor: {0}}" Visibility="{Binding extendedDataVisibility}"/>
+                            <TextBlock Text="{Binding Color, StringFormat={}szín: {0}}" Visibility="{Binding extendedDataVisibility}"/>
                         </StackPanel>
-                        <Button MaxHeight="40px" Margin="10,10" Click="btnCopyClick" Content="Hozzáadás a kedvencekhez"/>
-                    </StackPanel>
+                        <Image Width="200" Source="{Binding ImgPath}" Grid.Column="2"/>
+                        <Button MaxHeight="40px" Margin="10,10" Click="btnCopyClick" Content="Hozzáadás a kedvencekhez" Grid.Column="3"/>
+                    </Grid>
+                   
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
