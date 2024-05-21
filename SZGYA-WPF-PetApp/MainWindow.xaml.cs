@@ -38,7 +38,7 @@ namespace SZGYA_WPF_PetApp
         void btnCopyClick(object sender, RoutedEventArgs e)
         {
             Button b = (Button)sender;
-            pets.Add((Animal)b.DataContext);
+            pets.Add(new Animal((Animal)b.DataContext));
             lstbxPets.Items.Refresh();
         }
 

@@ -29,11 +29,11 @@ namespace SZGYA_WPF_PetApp
             {
                 //string path = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location); // csúnya, de wpf resource embeddinghez nincs idő
                 //return $"{path}\\..\\..\\..\\src\\IMAGES\\{_imgpath}";
-                return $"pack://application:,,,/src/IMAGES/{_imgpath}";
+                return _imgpath;
             } 
             set 
             {
-                _imgpath = value;    
+                _imgpath = $"pack://application:,,,/src/IMAGES/{value}";
             } 
         } 
         public Animal(string line) 
@@ -44,6 +44,14 @@ namespace SZGYA_WPF_PetApp
             Color = data[2];
             ImgPath = data[3];
             showExtendedData = false;
+        }
+
+        public Animal(Animal a) 
+        {
+            Name = a.Name;
+            Age = a.Age;
+            Color = a.Color;
+            _imgpath = a.ImgPath;
         }
     }
 }
