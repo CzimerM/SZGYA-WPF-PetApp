@@ -27,8 +27,9 @@ namespace SZGYA_WPF_PetApp
         { 
             get
             {
-                string path = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location); // csúnya, de wpf resource embeddinghez nincs idő
-                return $"{path}\\..\\..\\..\\src\\IMAGES\\{_imgpath}";
+                //string path = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location); // csúnya, de wpf resource embeddinghez nincs idő
+                //return $"{path}\\..\\..\\..\\src\\IMAGES\\{_imgpath}";
+                return $"pack://application:,,,/src/IMAGES/{_imgpath}";
             } 
             set 
             {

@@ -9,4 +9,50 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="src\IMAGES\hal.jfif" />
+    <None Remove="src\IMAGES\horcsog.jfif" />
+    <None Remove="src\IMAGES\kigyo.jfif" />
+    <None Remove="src\IMAGES\lepke.jfif" />
+    <None Remove="src\IMAGES\macska.jfif" />
+    <None Remove="src\IMAGES\nyul.jfif" />
+    <None Remove="src\IMAGES\papagaj.jfif" />
+    <None Remove="src\IMAGES\roka.jfif" />
+    <None Remove="src\IMAGES\teknos.jfif" />
+    <None Remove="src\IMAGES\tengerimalac.jfif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="src\IMAGES\hal.jfif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\IMAGES\horcsog.jfif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\IMAGES\kigyo.jfif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\IMAGES\lepke.jfif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\IMAGES\macska.jfif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\IMAGES\nyul.jfif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\IMAGES\papagaj.jfif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\IMAGES\roka.jfif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\IMAGES\teknos.jfif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="src\IMAGES\tengerimalac.jfif">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
 </Project>
